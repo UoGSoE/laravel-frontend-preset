@@ -1,7 +1,7 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
-@section('body')
-<div class="flex items-center justify-center min-h-screen ">
-    <span class="text-4xl text-purple">Laravel</span>
+@section('content')
+<div class="">
+    <span class="">School of Engineering {{ config('app.name', 'Laravel') }}</span>
 </div>
 @endsection

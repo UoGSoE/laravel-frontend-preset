@@ -1,25 +1,37 @@
 {
-    "name": "calebporzio/laravel-frontend-preset",
-    "description": "My personal frontend preset for new laravel applications.",
+    "name": "uogsoe/laravel-frontend-preset",
+    "description": "Base preset for our Laravel applications.",
     "license": "MIT",
     "authors": [
         {
-            "name": "Caleb Porzio",
-            "email": "calebporzio@gmail.com"
+            "name": "Billy",
+            "email": "william.allan@glasgow.ac.uk"
         }
     ],
     "require": {
-        "laravel/framework": "^5.5"
+        "laravel/framework": "^5.5",
+        "predis/predis": "^1.1",
+        "lab404/laravel-impersonate": "^1.2",
+        "laravel/horizon": "^1.4",
+        "uogsoe/ldap-laravel": "^1.0",
+        "ohffs/simple-spout": "dev-master",
+        "sentry/sentry-laravel": "^0.10.0",
+        "spatie/laravel-activitylog": "^3.1",
+        "tightenco/ziggy": "^0.6"
+    },
+    "require-dev": {
+        "laravel/dusk": "^3.0",
+        "barryvdh/laravel-debugbar": "^3.2"
     },
     "autoload": {
         "psr-4": {
-            "CalebPorzio\\LaravelPreset\\": "src/"
+            "UoGSoE\\LaravelPreset\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "CalebPorzio\\LaravelPreset\\PresetServiceProvider"
+                "UoGSoE\\LaravelPreset\\PresetServiceProvider"
             ]
         }
     }

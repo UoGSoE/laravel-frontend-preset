@@ -1,6 +1,6 @@
 <?php
 
-namespace CalebPorzio\LaravelPreset;
+namespace UoGSoE\LaravelPreset;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Console\Presets\Preset as BasePreset;
@@ -21,12 +21,21 @@ class Preset extends BasePreset
     protected static function updatePackageArray($packages)
     {
         return array_merge([
-            'laravel-mix-tailwind' => '^0.1.0',
-            'tailwindcss' => '>=0.5.2',
+            "@sentry/browser" => "^4.3.0",
+            "babel-plugin-syntax-dynamic-import" => "^6.18.0",
+            "babel-preset-stage-2" => "^6.24.1",
+            "bulma" => "^0.7.2",
+            "eslint" => "^5.8.0",
+            "eslint-plugin-vue" => "^5.0.0-beta.3",
+            "portal-vue" => "^1.4.0",
+            "vee-validate" => "^2.1.0-beta.11",
+            "@fortawesome/fontawesome-free" => "^5.4.2",
+            "moment" => "^2.22.0",
+            "pikaday" => "^1.7.0",
         ], Arr::except($packages, [
             'bootstrap',
             'jquery',
-            'popper.js',
+            'lodash',
         ]));
     }
 
@@ -42,6 +51,7 @@ class Preset extends BasePreset
 
     protected static function bootstrapDotJs()
     {
+        copy(__DIR__ . '/stubs/app.js', resource_path('js/app.js'));
         copy(__DIR__ . '/stubs/bootstrap.js', resource_path('js/bootstrap.js'));
     }
 
@@ -49,13 +59,7 @@ class Preset extends BasePreset
     {
         $files = new Filesystem;
 
-        $files->makeDirectory(resource_path('sass/components', 0755, true));
-
-        $files->delete(resource_path('sass/_variables.scss'));
-
         copy(__DIR__ . '/stubs/app.scss', resource_path('sass/app.scss'));
-        copy(__DIR__ . '/stubs/_custom-utilities.scss', resource_path('sass/_custom-utilities.scss'));
-        copy(__DIR__ . '/stubs/components/_button.scss', resource_path('sass/components/_button.scss'));
     }
 
     protected static function views()
