@@ -15,6 +15,7 @@ class Preset extends BasePreset
         static::gitignore();
         static::bootstrapDotJs();
         static::appDotScss();
+        static::babelEslint();
         static::views();
         static::routes();
     }
@@ -76,5 +77,11 @@ class Preset extends BasePreset
     protected static function routes()
     {
         copy(__DIR__ . '/stubs/routes/web.php', base_path('routes/web.php'));
+    }
+
+    protected static function babelEslint()
+    {
+        copy(__DIR__ . '/stubs/eslintrc', base_path('.eslintrc'));
+        copy(__DIR__ . '/stubs/babelrc', base_path('.babelrc'));
     }
 }
