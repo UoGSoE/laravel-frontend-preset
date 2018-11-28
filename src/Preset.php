@@ -16,6 +16,7 @@ class Preset extends BasePreset
         static::bootstrapDotJs();
         static::appDotScss();
         static::views();
+        static::routes();
     }
 
     protected static function updatePackageArray($packages)
@@ -70,5 +71,10 @@ class Preset extends BasePreset
         $files->exists($file = resource_path('views/home.blade.php')) && $files->delete($file);
 
         $files->copyDirectory(__DIR__ . '/stubs/views', resource_path('views'));
+    }
+
+    protected static function routes()
+    {
+        copy(__DIR__ . '/stubs/routes/web.php', app_path('routes/web.php'));
     }
 }

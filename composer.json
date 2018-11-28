@@ -17,6 +17,7 @@
         "ohffs/simple-spout": "dev-master",
         "sentry/sentry-laravel": "^0.10.0",
         "spatie/laravel-activitylog": "^3.1",
+	"ohffs/laravel-admin-middleware": "dev-master",
         "tightenco/ziggy": "^0.6"
     },
     "require-dev": {
