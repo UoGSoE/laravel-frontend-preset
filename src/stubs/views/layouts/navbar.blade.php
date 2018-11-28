@@ -34,15 +34,6 @@
       </div>
       <div class="navbar-end">
 
-          @if (session('original_id'))
-            <form method="POST" action="" class="navbar-item">
-              {{ csrf_field() }}
-              {{ method_field('DELETE') }}
-              <button class="button">
-                Stop Impersonating
-              </button>
-            </form>
-          @endif
         <div class="navbar-item has-dropdown is-hoverable">
           <a href="" class="navbar-link">
               {{ Auth::user()->full_name }}

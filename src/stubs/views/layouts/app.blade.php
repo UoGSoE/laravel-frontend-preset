@@ -41,9 +41,22 @@
                     @endif
 
                     @yield('content')
+
+                    <portal-target name="portal-modal">
+                    </portal-target>
+
                 </div>
             </div>
         </section>
+
+        @impersonating
+            <div class="box impersonation-box shadow-lg">
+                <form method="GET" action="{{ route('impersonate.leave') }}">
+                    @csrf
+                    <button class="button is-outlined">Stop impersonating</button>
+                </form>
+            </div>
+        @endImpersonating
 
         <div>
             @include('layouts.footer')
