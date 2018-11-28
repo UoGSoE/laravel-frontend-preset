@@ -19,32 +19,36 @@
     @routes
 </head>
 <body>
-    @include('layouts.navbar')
+    <div id="layout">
 
-    <section id="app" class="section">
-        <div class="container" id="content-area">
-            <div id="content-main">
-                <noscript>
-                    This website requires javascript to function. Please turn it on.
-                </noscript>
+        @include('layouts.navbar')
 
-                @include('layouts.errors')
+        <section id="app" class="section">
+            <div class="container" id="content-area">
+                <div id="content-main">
+                    <noscript>
+                        This website requires javascript to function. Please turn it on.
+                    </noscript>
 
-                @if (session('success'))
-                    <article class="message is-success" id="success-box">
-                        <div class="message-body">
-                            {{ session('success') }}
-                        </div>
-                    </article>
-                @endif
+                    @include('layouts.errors')
 
-                @yield('content')
+                    @if (session('success'))
+                        <article class="message is-success" id="success-box">
+                            <div class="message-body">
+                                {{ session('success') }}
+                            </div>
+                        </article>
+                    @endif
+
+                    @yield('content')
+                </div>
             </div>
-            <div>
-                @include('layouts.footer')
-            </div>
+        </section>
+
+        <div>
+            @include('layouts.footer')
         </div>
-    </section>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

@@ -1,0 +1,39 @@
+@import "~bulma/bulma";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+[v-cloak] {
+  display: none;
+}
+
+#layout {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#app {
+    flex: 1;
+}
+#footer {
+}
+
+.impersonation-box {
+  position:fixed;
+  bottom: 20px;
+  right: 20px;
+  animation: impersonation-pulse 1s alternate infinite;
+  border: 2px solid;
+}
+
+@keyframes impersonation-pulse {
+  0% {
+    border-color: hsl(348, 100%, 100%);
+  }
+  100% {
+    border-color: hsl(348, 100%, 61%);
+  }
+}
