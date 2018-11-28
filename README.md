@@ -8,7 +8,7 @@
 - Some composer packages we use a lot
 
 ### Installation:
-`composer install uogsoe/laravel-frontend-preset`
+`composer require uogsoe/laravel-frontend-preset`
 
 ### Usage:
 `php artisan preset uogsoe`
