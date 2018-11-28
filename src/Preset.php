@@ -75,6 +75,6 @@ class Preset extends BasePreset
 
     protected static function routes()
     {
-        copy(__DIR__ . '/stubs/routes/web.php', app_path('routes/web.php'));
+        copy(__DIR__ . '/stubs/routes/web.php', base_path('routes/web.php'));
     }
 }
